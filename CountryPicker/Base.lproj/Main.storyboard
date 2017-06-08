@@ -1,14 +1,18 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Ydz-qa-MxA">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--CountryPicker-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="CountryPicker" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,11 +20,139 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="stP-PJ-YJ7">
+                                <rect key="frame" x="141" y="318" width="94" height="33"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="Show picker"/>
+                                <connections>
+                                    <segue destination="INM-0Y-yWe" kind="show" identifier="showCountryPickerViewController" id="JXw-4K-fRa"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zEd-YC-adv">
+                                <rect key="frame" x="20" y="94" width="335" height="0.0"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="stP-PJ-YJ7" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="0wn-uy-iVb"/>
+                            <constraint firstItem="zEd-YC-adv" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="Frf-d4-Ahb"/>
+                            <constraint firstItem="zEd-YC-adv" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="URW-xc-VNg"/>
+                            <constraint firstItem="zEd-YC-adv" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="30" id="VO3-bz-Z3k"/>
+                            <constraint firstItem="stP-PJ-YJ7" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="jmX-5v-4UO"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="CountryPicker" id="HuQ-D2-26z"/>
+                    <connections>
+                        <outlet property="countryLabel" destination="zEd-YC-adv" id="QwF-nW-bJu"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="990" y="777"/>
+        </scene>
+        <!--CountryPicker-->
+        <scene sceneID="YX1-0B-ZaW">
+            <objects>
+                <viewController id="INM-0Y-yWe" customClass="CountryPickerViewController" customModule="CountryPicker" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="wG0-H3-J4d"/>
+                        <viewControllerLayoutGuide type="bottom" id="kjH-PW-1PV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="GIO-5L-vEV">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="interactive" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="41L-Vv-yin">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <searchBar key="tableHeaderView" contentMode="redraw" placeholder="Search..." id="uMd-6l-be8">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                    <connections>
+                                        <outlet property="delegate" destination="INM-0Y-yWe" id="hHX-Nq-Z1M"/>
+                                    </connections>
+                                </searchBar>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="countryCellIdentifier" id="XoP-vU-js8" customClass="CountryTableViewCell" customModule="CountryPicker" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="72" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="XoP-vU-js8" id="Mz5-DT-unH">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Text" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VpA-Dd-s3u">
+                                                    <rect key="frame" x="16" y="11" width="283" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0u5-Ea-O4b">
+                                                    <rect key="frame" x="315" y="12" width="44" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" name="controlShadowColor" catalog="System" colorSpace="catalog"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="VpA-Dd-s3u" firstAttribute="centerY" secondItem="Mz5-DT-unH" secondAttribute="centerY" id="3ZS-AQ-Zdg"/>
+                                                <constraint firstItem="0u5-Ea-O4b" firstAttribute="leading" secondItem="VpA-Dd-s3u" secondAttribute="trailing" constant="16" id="4HR-L0-BJw"/>
+                                                <constraint firstAttribute="trailing" secondItem="0u5-Ea-O4b" secondAttribute="trailing" constant="16" id="bbA-YN-wjj"/>
+                                                <constraint firstItem="0u5-Ea-O4b" firstAttribute="centerY" secondItem="Mz5-DT-unH" secondAttribute="centerY" id="lSF-vA-yWr"/>
+                                                <constraint firstItem="VpA-Dd-s3u" firstAttribute="leading" secondItem="Mz5-DT-unH" secondAttribute="leading" constant="16" id="y7R-aw-Rhy"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="detailLabel" destination="0u5-Ea-O4b" id="xZz-HJ-P2I"/>
+                                            <outlet property="titleLabel" destination="VpA-Dd-s3u" id="wwH-e1-kqX"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="INM-0Y-yWe" id="2NO-PK-ORk"/>
+                                    <outlet property="delegate" destination="INM-0Y-yWe" id="dus-cN-WFM"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="41L-Vv-yin" firstAttribute="leading" secondItem="GIO-5L-vEV" secondAttribute="leading" id="6Xl-4J-6PQ"/>
+                            <constraint firstItem="41L-Vv-yin" firstAttribute="top" secondItem="GIO-5L-vEV" secondAttribute="top" id="Ta7-q8-pRo"/>
+                            <constraint firstAttribute="trailing" secondItem="41L-Vv-yin" secondAttribute="trailing" id="hwN-4R-Ct9"/>
+                            <constraint firstItem="kjH-PW-1PV" firstAttribute="top" secondItem="41L-Vv-yin" secondAttribute="bottom" id="jMv-3B-Pxq"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="CountryPicker" id="c9D-dt-K7k"/>
+                    <connections>
+                        <outlet property="searchBar" destination="uMd-6l-be8" id="0PN-lX-KRj"/>
+                        <outlet property="tableView" destination="41L-Vv-yin" id="yzN-Ix-vmT"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tKZ-RY-ISt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1962" y="777"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="i8R-Yu-7ea">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Ydz-qa-MxA" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Ndu-YS-2Mp">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="yGz-KQ-Vzs"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="c9a-jw-R40" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="101.59999999999999" y="776.76161919040487"/>
         </scene>
     </scenes>
 </document>

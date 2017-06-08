@@ -14,6 +14,9 @@
 		83119CA31EE8E01F009F2AA0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83119CA11EE8E01F009F2AA0 /* LaunchScreen.storyboard */; };
 		83119CAE1EE8E020009F2AA0 /* CountryPickerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83119CAD1EE8E020009F2AA0 /* CountryPickerTests.swift */; };
 		83119CB91EE8E020009F2AA0 /* CountryPickerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83119CB81EE8E020009F2AA0 /* CountryPickerUITests.swift */; };
+		83119CC71EE8E03B009F2AA0 /* CountryPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83119CC61EE8E03B009F2AA0 /* CountryPickerViewController.swift */; };
+		83119CC91EE8EE5A009F2AA0 /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83119CC81EE8EE5A009F2AA0 /* Country.swift */; };
+		83119CCB1EE8F2A2009F2AA0 /* CountryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83119CCA1EE8F2A2009F2AA0 /* CountryTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +50,9 @@
 		83119CB41EE8E020009F2AA0 /* CountryPickerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CountryPickerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		83119CB81EE8E020009F2AA0 /* CountryPickerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryPickerUITests.swift; sourceTree = "<group>"; };
 		83119CBA1EE8E020009F2AA0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		83119CC61EE8E03B009F2AA0 /* CountryPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountryPickerViewController.swift; sourceTree = "<group>"; };
+		83119CC81EE8EE5A009F2AA0 /* Country.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
+		83119CCA1EE8F2A2009F2AA0 /* CountryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountryTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,8 +103,11 @@
 		83119C971EE8E01F009F2AA0 /* CountryPicker */ = {
 			isa = PBXGroup;
 			children = (
-				83119C981EE8E01F009F2AA0 /* AppDelegate.swift */,
+				83119CCA1EE8F2A2009F2AA0 /* CountryTableViewCell.swift */,
+				83119CC81EE8EE5A009F2AA0 /* Country.swift */,
+				83119CC61EE8E03B009F2AA0 /* CountryPickerViewController.swift */,
 				83119C9A1EE8E01F009F2AA0 /* ViewController.swift */,
+				83119C981EE8E01F009F2AA0 /* AppDelegate.swift */,
 				83119C9C1EE8E01F009F2AA0 /* Main.storyboard */,
 				83119C9F1EE8E01F009F2AA0 /* Assets.xcassets */,
 				83119CA11EE8E01F009F2AA0 /* LaunchScreen.storyboard */,
@@ -264,6 +273,9 @@
 			files = (
 				83119C9B1EE8E01F009F2AA0 /* ViewController.swift in Sources */,
 				83119C991EE8E01F009F2AA0 /* AppDelegate.swift in Sources */,
+				83119CC71EE8E03B009F2AA0 /* CountryPickerViewController.swift in Sources */,
+				83119CC91EE8EE5A009F2AA0 /* Country.swift in Sources */,
+				83119CCB1EE8F2A2009F2AA0 /* CountryTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -516,6 +528,7 @@
 				83119CBF1EE8E020009F2AA0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		83119CC01EE8E020009F2AA0 /* Build configuration list for PBXNativeTarget "CountryPickerTests" */ = {
 			isa = XCConfigurationList;
@@ -524,6 +537,7 @@
 				83119CC21EE8E020009F2AA0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		83119CC31EE8E020009F2AA0 /* Build configuration list for PBXNativeTarget "CountryPickerUITests" */ = {
 			isa = XCConfigurationList;
@@ -532,6 +546,7 @@
 				83119CC51EE8E020009F2AA0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

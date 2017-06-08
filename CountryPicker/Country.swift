@@ -1,5 +1,5 @@
 //
-//  CountryPhone.swift
+//  Country.swift
 //  CountryPicker
 //
 //  Created by Daniele Boscolo on 07/06/17.
@@ -8,9 +8,19 @@
 
 import Foundation
 
-class CountryPhone {
-    class func phoneCode(_ code: String) -> String {
-        var countryDictionary  = ["AF":"93",
+class Country {
+    let code: String
+    let name: String
+    let emoji: String
+
+    init(code: String, name: String, emoji: String) {
+        self.code = code
+        self.emoji = emoji
+        self.name = name
+    }
+    
+    var phonePreffix: String? {
+        let countryDictionary  = ["AF":"93",
                                   "AL":"355",
                                   "DZ":"213",
                                   "AS":"1",
@@ -249,12 +259,6 @@ class CountryPhone {
                                   "VN":"84",
                                   "VG":"284",
                                   "VI":"340"]
-        if countryDictionary[country] != nil {
-            return countryDictionary[country]!
-        }
-            
-        else {
-            return ""
-        }
+       return countryDictionary[code]
     }
 }
